@@ -38,6 +38,26 @@ Description: industry-db on the local PostgreSQL cluster
  which creates the owner role, the database, pg_trgm and the SELECT-only
  industry_db_ro role from it.
 
+Package: kb-industry-db
+Architecture: all
+Version: 0.1.3
+Priority: optional
+Section: misc
+Maintainer: Kevin Chiu <korprulu9@gmail.com>
+Installed-Size: 5
+Depends: postgresql (>= 16), openssl
+Filename: pool/main/kb-industry-db_0.1.3_all.deb
+Size: 4192
+MD5sum: 429005ad6afb52fb3362684c95bea8c1
+SHA1: 01e789e8d575cfc1580ac40e4cc628c29f633811
+SHA256: 7bfbf6c99e966d66b8a129293d44abf575aeed17bf1d2481d8b3c939c2dcfb7f
+SHA512: 91c01db96c03b015f01b4ce2b95e5936321a7b86b9aad7c0dd339b19766895612919a4209785d7362a3173596800605601b7de39780a543456262b40a3d02000
+Homepage: https://github.com/korprulu/kb
+Description: industry-db on the local PostgreSQL cluster
+ The /etc/kb/kb.env settings every kb-* service reads, and kb-db-setup,
+ which creates the owner role, the database, pg_trgm and the SELECT-only
+ industry_db_ro role from it.
+
 Package: kb-reader
 Architecture: amd64
 Version: 0.1.1
@@ -71,6 +91,25 @@ MD5sum: 3825cdc44f99eeaf179dc3f49f5a23f3
 SHA1: 9fab7dfa873d3bb62981032fa8a8f1fdf5cbb004
 SHA256: d776d33a24194238d31a468a8a7dc0a7ed93e8e6139f10c76f9afe7f5603c4c4
 SHA512: 797919b50f58ca1342553883c061da61f9d72d2d56a4f01c3ba3a062106a874ee1a78c2706cbe04ad24018d3e677f1a0cccc37628d0c277f3046b94d516bf002
+Homepage: https://github.com/korprulu/kb
+Description: industry-db read server (query-graph serve)
+ REST at /api/v1 and MCP at /mcp on 127.0.0.1:8080, logging in as the
+ SELECT-only industry_db_ro role.
+
+Package: kb-reader
+Architecture: amd64
+Version: 0.1.3
+Priority: optional
+Section: misc
+Maintainer: Kevin Chiu <korprulu9@gmail.com>
+Installed-Size: 12685
+Depends: kb-industry-db, systemd
+Filename: pool/main/kb-reader_0.1.3_amd64.deb
+Size: 4737306
+MD5sum: 9f81afbc6e53dea8d33b726ee10de2b1
+SHA1: fadf9d5f155ca40d964a35c9d2be50951a29e0b2
+SHA256: b4e1378591c4220c619e35071d5fbc3975e04b2af14ef6e10258a7918b3b9920
+SHA512: 012553ee1e94fa84c217a5f1377b7c3cc3e94b96e3ba2c0da820e487f1697f71765d718d51ad34dbfae0dec9c8432a05ac6373431d4b9b10bd641124531f1694
 Homepage: https://github.com/korprulu/kb
 Description: industry-db read server (query-graph serve)
  REST at /api/v1 and MCP at /mcp on 127.0.0.1:8080, logging in as the
@@ -112,6 +151,24 @@ Homepage: https://github.com/korprulu/kb
 Description: Cloudflare tunnel for the kb reader and writer
  Runs cloudflared with the tunnel token from /etc/kb/kb.env.
 
+Package: kb-tunnel
+Architecture: all
+Version: 0.1.3
+Priority: optional
+Section: misc
+Maintainer: Kevin Chiu <korprulu9@gmail.com>
+Installed-Size: 1
+Depends: kb-industry-db, systemd, cloudflared
+Filename: pool/main/kb-tunnel_0.1.3_all.deb
+Size: 2128
+MD5sum: 663e486188ffa907f4f0f7e907269264
+SHA1: 678a2b70b8152d47b1772c6fa9a50ac1f75caff9
+SHA256: 23f2de13a872b92de83091bd526a347fcfdbb3c43c7a24f0ab393a7d7da2d9f6
+SHA512: 8c29558a31c900378bf3a92994f613cf1a78aafee66dea049955564d888401407da744eedc17058cd62a20fe7911083919af496f58d4e71bbc734e6eacb5d7bd
+Homepage: https://github.com/korprulu/kb
+Description: Cloudflare tunnel for the kb reader and writer
+ Runs cloudflared with the tunnel token from /etc/kb/kb.env.
+
 Package: kb-writer
 Architecture: amd64
 Version: 0.1.1
@@ -145,6 +202,25 @@ MD5sum: 9cb11dddf96a56fc13a880af7a17a5cc
 SHA1: 7c8550cd8984c72b8592d2d1bb82f397d11133bc
 SHA256: a81a35b9ada9aebcc6f526f7b0f167b569283b0150aa2a860ac6edc001aa5c7d
 SHA512: 69d7995fdb865259d0b9dd07e997e69c36d1688183eb5441e4370906a7abdf31111573572faf2ffea6dd3e0dfc4be1e7069481a61d243f13b74894897b3b390c
+Homepage: https://github.com/korprulu/kb
+Description: industry-db write server (research-links serve)
+ REST at /api/v1 and MCP at /mcp on 127.0.0.1:8081, logging in as the
+ owner and owning the vault root set in /etc/kb/kb.env.
+
+Package: kb-writer
+Architecture: amd64
+Version: 0.1.3
+Priority: optional
+Section: misc
+Maintainer: Kevin Chiu <korprulu9@gmail.com>
+Installed-Size: 13311
+Depends: kb-industry-db, systemd
+Filename: pool/main/kb-writer_0.1.3_amd64.deb
+Size: 4973910
+MD5sum: b453730fccd4c275a70c291185dc4bd9
+SHA1: 08ecaac55238cb01005a03f2bc6c316773c6a698
+SHA256: 10709065f426b88d06a75ffea9cc483a9f0c3611dc9ede0e40f6450acce063b9
+SHA512: d07b5c1b84e9cde414180a017f5a42fbbef69a85696b08bcf0238af06bf01b9038f22dd3a1e61ceb3d57564147cf76b3b561a5558a598a18a01fd0b24f897114
 Homepage: https://github.com/korprulu/kb
 Description: industry-db write server (research-links serve)
  REST at /api/v1 and MCP at /mcp on 127.0.0.1:8081, logging in as the
