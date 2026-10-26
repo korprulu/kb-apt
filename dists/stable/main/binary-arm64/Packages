@@ -1,25 +1,5 @@
 Package: kb-industry-db
 Architecture: all
-Version: 0.1.1
-Priority: optional
-Section: misc
-Maintainer: Kevin Chiu <korprulu9@gmail.com>
-Installed-Size: 5
-Depends: postgresql (>= 16), openssl
-Filename: pool/main/kb-industry-db_0.1.1_all.deb
-Size: 3988
-MD5sum: 44ee97cc2190dc021483b806b806f37e
-SHA1: 60c6688f9b07fc2f7f54fd4f0ed20a3bc214dc47
-SHA256: 01c1eff115508896f822089bfebb72cfc68634f256d4388be0b185d6629c56fd
-SHA512: bec6e95d886abc0905420f15f8f4861606a9d5f2acb3625a8a24b690c7c3921afc61041800f2eb51cd4f9f90cc285e1bed61a1aec88864f79cb2e34a3ce482fc
-Homepage: https://github.com/korprulu/kb
-Description: industry-db on the local PostgreSQL cluster
- The /etc/kb/kb.env settings every kb-* service reads, and kb-db-setup,
- which creates the owner role, the database, pg_trgm and the SELECT-only
- industry_db_ro role from it.
-
-Package: kb-industry-db
-Architecture: all
 Version: 0.1.2
 Priority: optional
 Section: misc
@@ -98,24 +78,25 @@ Description: industry-db on the local PostgreSQL cluster
  which creates the owner role, the database, pg_trgm and the SELECT-only
  industry_db_ro role from it.
 
-Package: kb-reader
-Architecture: arm64
-Version: 0.1.1
+Package: kb-industry-db
+Architecture: all
+Version: 0.3.1
 Priority: optional
 Section: misc
 Maintainer: Kevin Chiu <korprulu9@gmail.com>
-Installed-Size: 11905
-Depends: kb-industry-db, systemd
-Filename: pool/main/kb-reader_0.1.1_arm64.deb
-Size: 4276034
-MD5sum: 78a9846e523eb3ee3471cd560a66b16b
-SHA1: a91be523545cf40668c004b87b60dd1063128459
-SHA256: 8caeb2ec5c12862dfc80bdea56393ec3075e963ff757a894d243e9583fe865d3
-SHA512: fd0deeaaa68ffb29fcc059bda25915bb59ee7043df31ea33dd910620116a69cf8fb89c04cbfdcb1d9695e192e6bddc83ccbef3f32e3fc8de1f5d8a5ce2bab3f3
+Installed-Size: 6
+Depends: postgresql (>= 16), openssl
+Filename: pool/main/kb-industry-db_0.3.1_all.deb
+Size: 4266
+MD5sum: 130074761cd779820c054e7fa808d3e5
+SHA1: badc0260bac949ebd50e26b97379027c94a7b0b4
+SHA256: 389f202d97235cd9e18d8182645999163887135c3c495759b3f848d9e907dfd7
+SHA512: 3da811c9cae7bdfebc1c75e28b27967cf502bf788cc43b012e22eff9309e2a7f21b5d4d8b3ccbf0e819c9e4719b82589de38d199f4db75de699fc18c0a896ae6
 Homepage: https://github.com/korprulu/kb
-Description: industry-db read server (query-graph serve)
- REST at /api/v1 and MCP at /mcp on 127.0.0.1:8080, logging in as the
- SELECT-only industry_db_ro role.
+Description: industry-db on the local PostgreSQL cluster
+ The /etc/kb/kb.env settings every kb-* service reads, and kb-db-setup,
+ which creates the owner role, the database, pg_trgm and the SELECT-only
+ industry_db_ro role from it.
 
 Package: kb-reader
 Architecture: arm64
@@ -193,23 +174,24 @@ Description: industry-db read server (query-graph serve)
  REST at /api/v1 and MCP at /mcp on 127.0.0.1:8080, logging in as the
  SELECT-only industry_db_ro role.
 
-Package: kb-tunnel
-Architecture: all
-Version: 0.1.1
+Package: kb-reader
+Architecture: arm64
+Version: 0.3.1
 Priority: optional
 Section: misc
 Maintainer: Kevin Chiu <korprulu9@gmail.com>
-Installed-Size: 1
-Depends: kb-industry-db, systemd, cloudflared
-Filename: pool/main/kb-tunnel_0.1.1_all.deb
-Size: 2128
-MD5sum: d651152b8ed478d82dc44aa1daf302c8
-SHA1: 5faadfdb08e27a7fa0022ae12c743aee18427847
-SHA256: 067f50b85ed488b5cce9c78faae5e1d9f418243d35cd1db35a715e843abb662a
-SHA512: be179a8d27c4734f67d0df1b0ec25ab0f3b9b1a3655ad83aea9ca4428b120f373d637e73819cc06b5d856d33e65dd85c405c1d6966e2c1d1719e5ab2bf2afdc1
+Installed-Size: 4315
+Depends: kb-industry-db, systemd
+Filename: pool/main/kb-reader_0.3.1_arm64.deb
+Size: 2320930
+MD5sum: f98a210375ca3a6753f1aaa6d9625c18
+SHA1: bbac81eeeaaf204a33eb5f85ddca9eb3777edc36
+SHA256: 797445d5ce2e83e2bd781b186492311298eda2b17b8b1aadd5afb74b33f83164
+SHA512: 7de0d452a587527c36bc2825f478d779864732e4a92ac5145ad46e69c9c903751e6f3a8957b2631bb9d1f10871ae2fb215ced8b0517379b6c30631f8897d702f
 Homepage: https://github.com/korprulu/kb
-Description: Cloudflare tunnel for the kb reader and writer
- Runs cloudflared with the tunnel token from /etc/kb/kb.env.
+Description: industry-db read server (query-graph serve)
+ REST at /api/v1 and MCP at /mcp on 127.0.0.1:8080, logging in as the
+ SELECT-only industry_db_ro role.
 
 Package: kb-tunnel
 Architecture: all
@@ -283,6 +265,24 @@ Homepage: https://github.com/korprulu/kb
 Description: Cloudflare tunnel for the kb reader and writer
  Runs cloudflared with the tunnel token from /etc/kb/kb.env.
 
+Package: kb-tunnel
+Architecture: all
+Version: 0.3.1
+Priority: optional
+Section: misc
+Maintainer: Kevin Chiu <korprulu9@gmail.com>
+Installed-Size: 1
+Depends: kb-industry-db, systemd, cloudflared
+Filename: pool/main/kb-tunnel_0.3.1_all.deb
+Size: 2132
+MD5sum: 0e4e42f7f2d63e4e8550e8637fd4adb0
+SHA1: 5ae36f4272aad2e8e372cf3438ed40807ec446e1
+SHA256: 462419c1068d4c98a5a80cef99cebc719d9e738c1f34e56dc1159373e06e09a2
+SHA512: e8f4bd633abc4e3e720f4a9a19e8c5287743976de73087e128792597b85eb8de50faafb7411f8f0a94a2e20fb0b89aff29e560df2e3ed08bb60e20023523786e
+Homepage: https://github.com/korprulu/kb
+Description: Cloudflare tunnel for the kb reader and writer
+ Runs cloudflared with the tunnel token from /etc/kb/kb.env.
+
 Package: kb-vault-web
 Architecture: arm64
 Version: 0.3.0
@@ -303,24 +303,25 @@ Description: read-only vault browser (vault-web serve)
  and its REST API on 127.0.0.1:8082. Reads the vault root set in
  /etc/kb/kb.env, never writes it, and needs no database.
 
-Package: kb-writer
+Package: kb-vault-web
 Architecture: arm64
-Version: 0.1.1
+Version: 0.3.1
 Priority: optional
 Section: misc
 Maintainer: Kevin Chiu <korprulu9@gmail.com>
-Installed-Size: 12419
+Installed-Size: 7701
 Depends: kb-industry-db, systemd
-Filename: pool/main/kb-writer_0.1.1_arm64.deb
-Size: 4476566
-MD5sum: 1d6b4dcb493432643e041b0d907e9876
-SHA1: ea745aca8fabcb7e4d4e62327510a29d3102531a
-SHA256: b1ea4e1a122c5f36b4a9770968144a18e03f9224cca37816c4978d60d994d2f3
-SHA512: 6cf8f233a941f0f6803d0b02304ae2d736cd40ffc90ec74d576c5245856eb0a36c229c55cbb713a78444f286da1abd5a2be685cfd9ab13399a5af90d816b60d2
+Filename: pool/main/kb-vault-web_0.3.1_arm64.deb
+Size: 2750166
+MD5sum: 34134be9bc34efe7271cbbf3c7b16595
+SHA1: 93113de9d0b935a3dbc3885c0f87f5088debba79
+SHA256: 3e1b360668699f90443ed8a668377c4dfe68dc71d6b5cfdad968fec25eeecacd
+SHA512: d15c823279af0c6cb8ebc00c0137004e1cbe327fd3832a594fce8d4a164051630cdc744cc3d2026ed0887ac18143be5e2de1e230b47266eb0c4aa8f8fd4a04e0
 Homepage: https://github.com/korprulu/kb
-Description: industry-db write server (research-links serve)
- REST at /api/v1 and MCP at /mcp on 127.0.0.1:8081, logging in as the
- owner and owning the vault root set in /etc/kb/kb.env.
+Description: read-only vault browser (vault-web serve)
+ A web page for reading the vault's notes, with Obsidian-style wikilinks,
+ and its REST API on 127.0.0.1:8082. Reads the vault root set in
+ /etc/kb/kb.env, never writes it, and needs no database.
 
 Package: kb-writer
 Architecture: arm64
@@ -393,6 +394,25 @@ MD5sum: 5ff18a8911b097168ac16e8f50b64350
 SHA1: 87a644b0af9a71893548d22b46c70c985e2fe31e
 SHA256: 2471bd7923fcff08fed0101c5e3ff79a237bdc15736ce36005812d884921ca64
 SHA512: 9bbefb9b2d1c580fab965383d710f4ab06cfe2dcbf8b5573cba8efc66c02e6be3ca6d06d56bf4cdb9d303a783f34bbe55ff683065d331e32b89eda7eb2ba16bf
+Homepage: https://github.com/korprulu/kb
+Description: industry-db write server (research-links serve)
+ REST at /api/v1 and MCP at /mcp on 127.0.0.1:8081, logging in as the
+ owner and owning the vault root set in /etc/kb/kb.env.
+
+Package: kb-writer
+Architecture: arm64
+Version: 0.3.1
+Priority: optional
+Section: misc
+Maintainer: Kevin Chiu <korprulu9@gmail.com>
+Installed-Size: 5031
+Depends: kb-industry-db, systemd
+Filename: pool/main/kb-writer_0.3.1_arm64.deb
+Size: 2701746
+MD5sum: 472fa353e17ed780d8be72317f34ce62
+SHA1: ab29111ca9464ec520b9d1b3ebfc5b881f48aca7
+SHA256: cc390b1af150bb434f460999ad26c2778a744a507730bcc2e965d4b38b094360
+SHA512: ef81a116dea50787c5dece15cc819fce117f768897f87c42235ed51f866654d1350a834800f1a3166b9f748b1a1393db6878bdf86f78cbe274ad70d27e1e1cc2
 Homepage: https://github.com/korprulu/kb
 Description: industry-db write server (research-links serve)
  REST at /api/v1 and MCP at /mcp on 127.0.0.1:8081, logging in as the
