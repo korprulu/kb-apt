@@ -4,30 +4,30 @@ Hash: SHA512
 Architectures: arm64
 Codename: stable
 Components: main
-Date: Mon, 02 Nov 2026 15:45:57 +0000
+Date: Sat, 14 Nov 2026 06:11:53 +0000
 Label: kb
 Origin: kb
 Suite: stable
 MD5Sum:
- f41a9f9d98951bbe34c314ba07e474a2              128 Release
- 8cf31253b255cc899133f8a2dbb6c77c            19492 main/binary-arm64/Packages
- 70e5ec33c337f198dc598e81f59fb558             5488 main/binary-arm64/Packages.gz
+ 819803a4d42ab7607848f0708c26b58f              128 Release
+ 972a68739aae34d4bb9a9a3ea7940f36            19509 main/binary-arm64/Packages
+ 50772a4bb7674815140aa7adfd6092df             5502 main/binary-arm64/Packages.gz
 SHA1:
- ffe0369f0aab6fe88f04b19e37c708473cc88e11              128 Release
- 47e04b6a4a9eab4aea77f34e3f3b633b1956afc3            19492 main/binary-arm64/Packages
- 8b1317d4e99920760b7a867159ef9b838e079376             5488 main/binary-arm64/Packages.gz
+ 609200b5d39886254092c72ab32877245037e1c4              128 Release
+ 117e003e1b719d879ece399ecd18f9dfd680d23b            19509 main/binary-arm64/Packages
+ 98462ce745c9fe2003eee34fcef99eab2778835c             5502 main/binary-arm64/Packages.gz
 SHA256:
- a69a5775176395f0b143367b7d5a1d8ce4f0364a79d0974526743126e6b2c277              128 Release
- bc3629091e120123bd22632e2dfb027df4d4021b32bc369d04cd9b2bd57289fd            19492 main/binary-arm64/Packages
- f565f48095b99f257311ab69770cfa7172efa548e0ad56f5b99291205b95abb9             5488 main/binary-arm64/Packages.gz
+ a307ca4ff94a971082bb1b9b28d7cd7b0e9d969be76386377e956a3cd2da11ce              128 Release
+ a7104d26f69c9a6fe888db1a85e508dc07893ea8f35016d89c19aa1643ffc958            19509 main/binary-arm64/Packages
+ 2b712582390d288edf4b9dc2f115c12d0186c8b73a956902431edabaac25e83e             5502 main/binary-arm64/Packages.gz
 SHA512:
- 1ce4d748f3b0cae00203e51990502f992d236196763b252fa4da32927972e74f5e1413adc2668cb54c3f80cc7231bf7566307048b41a7f5d29caebeca033d0ad              128 Release
- f6fcc0755f3de8bc289556b4876ce90467d5df18a8f045132891cc1f4e472d1974e1d97df6bd0ee683054be30307ac6497f820c619d3b415ce54fa50cc6b3f32            19492 main/binary-arm64/Packages
- 3b57d31f5d6be00bf4d8f89f241a70e9b3e5be44580468cbace5b717280a75e5e24968c20f9e5d7381e995d154c801a70c50f2658e156681567b60c6521431ce             5488 main/binary-arm64/Packages.gz
+ 0c542abdfdae2c15ca633f2905840da22821ea3227381cd4c446ca3afc838516fc45d9272059c19622281bc12fbe329042bcb26ca0dc2e8b91c085bb59208994              128 Release
+ ddb3e321bb7cbebfbe5d59d5ad5c85b33436c59061b3a844c58208299b8a20dc161d859a821b124234126f1d04fa8a32bfe309f067b0e60b4df83c0e41d04a87            19509 main/binary-arm64/Packages
+ 5b01810a1e0da1dc3f8782d9ac9484f064ccfa33a97b08dbf4869d8af97c6a8fd65e8da41d5d159d7df45f63df60bb0ce76bc35be55bc60d446f2a2d664d9df9             5502 main/binary-arm64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQT0V9aYBHxFaj+mZRVkEpp7EC5w2wUCauiwNQAKCRBkEpp7EC5w
-2+9IAP0bMwqbFjWCeKB5FxYLak8WCH5riSBxhN2InKVxnKrssgD9Gg54q+MxlHgq
-NVmf0bpSXjab+YF0rKSUZH4dNIePPgI=
-=Bub0
+iHUEARYKAB0WIQT0V9aYBHxFaj+mZRVkEpp7EC5w2wUCavf7qQAKCRBkEpp7EC5w
+20h2AQDp83l0TLDkr5IkR2rTf5a5w1/Q6e+vWLSIFasDBOb+ewD/YxZhfz/NdarB
+Bg6BMf9K1KAoe17fwfVEDwE18ik+MQA=
+=+Icp
 -----END PGP SIGNATURE-----
